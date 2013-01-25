@@ -98,6 +98,6 @@
 
   <Content type="html" view="home" href="home.html" preferred_height="350" />
   <Content type="html" view="canvas" href="canvas.html" preferred_height="400" />
-  <Content type="html" view="embedded.callout_location" href="callout.html" preferred_height="250" />
+  <Content type="html" view="embedded.callout_location" href="callout.html" preferred_height="480" />
 
 </Module>
