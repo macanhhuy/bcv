@@ -3,7 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <link href="css/style.css" type="text/css" rel="stylesheet" />
-           <script>
+        
+
+    </head>
+       <script>
 
 function addScriptTag(id, url, callback) {
 	var scriptTag = document.createElement("script");
@@ -20,6 +23,7 @@ function addScriptTag(id, url, callback) {
 }
 
 function getTopVideos() {
+	alert('test');
 	addScriptTag("topVideos", "http://api.brightcove.com/services/library?command=find_all_videos&token=0Z2dtxTdJAxtbZ-d0U7Bhio2V1Rhr5Iafl5FFtDPY8E.", "response");
 }
 
@@ -41,8 +45,6 @@ function response(jsonData) {
 }
 
 </script>
-
-    </head>
     <body onload="getTopVideos()">
        <h1>Query</h1>
 <p id="qDiv"></p>
