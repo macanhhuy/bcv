@@ -19,11 +19,11 @@
  */
 -->
 <Module specificationVersion="1">
-  <ModulePrefs title="Jive Location Demo"
-               description="Demonstration app for Jive World 2012. Retrieves a list of the user's connections and merges location-specific details."
-               author="Brian Shoemaker"
-               author_affiliation="Brian Shoemaker, Thomson Reuters"
-               author_email="brianshoemaker@gmail.com">
+  <ModulePrefs title="BrightCove Video"
+               description=""
+               author="Mac Anh Huy"
+               author_affiliation=""
+               author_email="huymac@magrabbit.com">
 
     <!-- Commonly used features -->
     <Require feature="dynamic-height" />
@@ -41,7 +41,7 @@
             <![CDATA[
             <action id="com.thomsonreuters.demo.callout.location"
                     path="jive/actions/rte"
-                    label="Embed Location"
+                    label="Insert Video"
                     view="embedded.callout_location"
 	             />
             ]]>

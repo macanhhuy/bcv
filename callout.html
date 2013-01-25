@@ -7,7 +7,42 @@
 	<body>
 	<!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a>. <br/>
 	Not all the features of this widget will work with IE7 and below.</p><![endif]-->
-	
+	<fieldset>
+      <legend>Videos</legend>
+         <div id="results"></div>
+    </fieldset><br>
+    <!-- This is the script to modify for the exercise -->
+    <script type="text/javascript">
+      // BCL Media API search maker -- adapted from JS-MAPI on opensource.brightcove.com
+      // namespace to keep all the "global" vars together
+      var BCL = {};
+      // placeholder - params for API call
+      BCL.params = {};
+      // Media API read token
+      BCMAPI.token = "zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
+      // set the callback for Media API calls
+      BCMAPI.callback = "BCL.onSearchResponse";
+      // set the filter
+      BCMAPI.search(BCL.params);
+      BCL.onSearchResponse = function(jsonData) {
+        var str = "";
+        for (var index in jsonData.items) {
+          str += "<a onclick=\"BCL.playVideo(" + jsonData.items[index].id + ")\" style=\"cursor:pointer\"><img src=\"" + jsonData.items[index].thumbnailURL + "\"/><br/><small>" + jsonData.items[index].name + "</<small></a><hr/>";
+        }
+        document.getElementById("results").innerHTML = str;
+      }
+      // Player API scripting
+      // event listener for the player being ready
+      BCL.onTemplateReady = function (event) {
+        BCL.player = brightcove.api.getExperience("myExperience");
+        // get a reference to the video player
+        BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+      }
+      // play video function
+      BCL.playVideo = function(videoID) {
+        BCL.videoPlayer.loadVideoByID(videoID);
+      }
+    </script>
 		<div id="calloutContainer">
 			<div id="searchContainer">
 				<input type="text" id="txtSearch" /> 
@@ -23,6 +58,8 @@
 		
 		<script src="js/libs/plugins.js" type="text/javascript"></script>
 		<script src="js/script.js" type="text/javascript"></script>
+		<script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
+		<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
 		
 		<script id="locationTemplate" type="text/x-mustache-template">
 			{{#locations}}
