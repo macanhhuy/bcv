@@ -3,64 +3,52 @@
     <head>
         <meta charset="UTF-8">
         <link href="css/style.css" type="text/css" rel="stylesheet" />
-            <script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
+           <script>
+
+function addScriptTag(id, url, callback) {
+	var scriptTag = document.createElement("script");
+	var noCacheIE = '&noCacheIE=' + (new Date()).getTime();
+   
+   // Add script object attributes
+   scriptTag.setAttribute("type", "text/javascript");
+   scriptTag.setAttribute("charset", "utf-8");
+   scriptTag.setAttribute("src", url + "&callback=" + callback + noCacheIE);
+   scriptTag.setAttribute("id", id);
+	
+	var head = document.getElementsByTagName("head").item(0);
+	head.appendChild(scriptTag);	
+}
+
+function getTopVideos() {
+	addScriptTag("topVideos", "http://api.brightcove.com/services/library?command=find_all_videos&token=0Z2dtxTdJAxtbZ-d0U7Bhio2V1Rhr5Iafl5FFtDPY8E.", "response");
+}
+
+function response(jsonData) {
+
+	//output the query
+	var q = document.getElementById("qDiv");
+	var s = document.getElementById("topVideos");
+	q.innerHTML = s.src;
+
+	// display the results
+	var resp = document.getElementById("resp");
+	for (var i=0; i<jsonData["items"].length; i++) {
+		var title = jsonData["items"][i];
+		var str = "";
+		str += title.name + '<br/>';
+		resp.innerHTML += str;
+	}
+}
+
+</script>
+
     </head>
-    <body>
-        <!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a>. <br/>
-        Not all the features of this widget will work with IE7 and below.</p><![endif]-->
-<!-- Start of Brightcove Player -->
-    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
-    <object id="myExperience" class="BrightcoveExperience">
-      <param name="bgcolor" value="#FFFFFF" />
-      <param name="width" value="480" />
-      <param name="height" value="270" />
-      <param name="playerID" value="2031045745001" />
-      <param name="playerKey" value="AQ~~%2CAAAB2OQbIXk~%2CEjsI0sjUlMbxzehJ_b8jEVPgu7BQ9IxC" />
-      <param name="isVid" value="true" />
-      <param name="isUI" value="true" />
-      <param name="dynamicStreaming" value="true" />
-      <!-- params for Universal Player API -->
-      <param name="includeAPI" value="true" />
-      <param name="templateReadyHandler" value="BCL.onTemplateReady" />
-    </object>
-    <script type="text/javascript">brightcove.createExperiences();</script>
-    <!-- End of Brightcove Player -->
-    <fieldset>
-      <legend>Videos</legend>
-         <div id="results"></div>
-    </fieldset><br>
-    <!-- This is the script to modify for the exercise -->
-    <script type="text/javascript">
-      // BCL Media API search maker -- adapted from JS-MAPI on opensource.brightcove.com
-      // namespace to keep all the "global" vars together
-      var BCL = {};
-      // placeholder - params for API call
-      BCL.params = {};
-      // Media API read token
-      BCMAPI.token = "zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
-      // set the callback for Media API calls
-      BCMAPI.callback = "BCL.onSearchResponse";
-      // set the filter
-      BCMAPI.search(BCL.params);
-      BCL.onSearchResponse = function(jsonData) {
-        var str = "";
-        for (var index in jsonData.items) {
-          str += "<a onclick=\"BCL.playVideo(" + jsonData.items[index].id + ")\" style=\"cursor:pointer\"><img src=\"" + jsonData.items[index].thumbnailURL + "\"/><br/><small>" + jsonData.items[index].name + "</<small></a><hr/>";
-        }
-        document.getElementById("results").innerHTML = str;
-      }
-      // Player API scripting
-      // event listener for the player being ready
-      BCL.onTemplateReady = function (event) {
-        BCL.player = brightcove.api.getExperience("myExperience");
-        // get a reference to the video player
-        BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
-      }
-      // play video function
-      BCL.playVideo = function(videoID) {
-        BCL.videoPlayer.loadVideoByID(videoID);
-      }
-    </script>
+    <body onload="getTopVideos()">
+       <h1>Query</h1>
+<p id="qDiv"></p>
+
+<h1>Results</h1>
+<div id="resp"></div>
 
     </body>
 </html>
