@@ -23,8 +23,9 @@ function addScriptTag(id, url, callback) {
 }
 
 function getTopVideos() {
-	alert('test');
+
 	addScriptTag("topVideos", "http://api.brightcove.com/services/library?command=find_all_videos&token=0Z2dtxTdJAxtbZ-d0U7Bhio2V1Rhr5Iafl5FFtDPY8E.", "response");
+	
 }
 
 function response(jsonData) {
@@ -33,7 +34,7 @@ function response(jsonData) {
 	var q = document.getElementById("qDiv");
 	var s = document.getElementById("topVideos");
 	q.innerHTML = s.src;
-
+alert(s.src);
 	// display the results
 	var resp = document.getElementById("resp");
 	for (var i=0; i<jsonData["items"].length; i++) {
