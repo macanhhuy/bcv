@@ -10,7 +10,7 @@
        <script>
  
        function showBC(data){
-      brightcoveItems = data.items; 
+      brightcoveItems = data; 
     
      
   
@@ -20,6 +20,8 @@
       var html = Mustache.to_html(template, brightcoveItems);
      console.log("HTML: " +html);
     }
+
+
 
 $(document).ready(function() {
 
