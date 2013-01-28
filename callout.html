@@ -52,19 +52,7 @@ $(document).ready(function() {
                     }
                 };
              
-osapi.jive.core.container.editor().insert('<object id="myExperience" class="BrightcoveExperience">
-      <param name="bgcolor" value="#FFFFFF" />
-      <param name="width" value="480" />
-      <param name="height" value="270" />
-      <param name="playerID" value="2031365238001" />
-      <param name="playerKey" value="AQ~~%2CAAAB2OQbIXk~%2CEjsI0sjUlMbxzehJ_b8jEVPgu7BQ9IxC" />
-      <param name="isVid" value="true" />
-      <param name="isUI" value="true" />
-      <param name="dynamicStreaming" value="true" />
-
-      <param name="includeAPI" value="true" />
-      <param name="templateReadyHandler" value="BCL.onTemplateReady" />
-    </object>');
+osapi.jive.core.container.editor().insert('<img class="jive_macro jive_macro_youtube" height="350" src="https://magrabbit-bc.jiveon.com/servlet/JiveServlet/downloadImage/1192/__icon_128__.png" width="425" jivemacro="brightcove" ___default_attr="'+id+'" />');
                 // Post the activity to the activity stream
                 osapi.activities.create(params).execute(
                     function(response) {
