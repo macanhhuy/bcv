@@ -8,15 +8,10 @@
     </head>
        <script>
 
-function getTopVideos() {
-
-	addScriptTag("topVideos", "http://api.brightcove.com/services/library?command=find_all_videos&token=0Z2dtxTdJAxtbZ-d0U7Bhio2V1Rhr5Iafl5FFtDPY8E.", "response");
-
-}
-
 $(document).ready(function() {
+  alert("test");
   // Stuff to do as soon as the DOM is ready;
-  url = "http://api.brightcove.com/services/library?command=find_all_videos&token=0Z2dtxTdJAxtbZ-d0U7Bhio2V1Rhr5Iafl5FFtDPY8E.&callback=?";
+  url = "http://api.brightcove.com/services/library?command=find_all_videos&token=0Z2dtxTdJAxtbZ-d0U7Bhio2V1Rhr5Iafl5FFtDPY8E.";
  osapi.http.get({
       href: url,
         format: 'json'
