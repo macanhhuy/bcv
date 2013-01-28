@@ -43,7 +43,7 @@ $(document).ready(function() {
 <ul>
 {{#items}}
 
-    <li><strong>{{name}}</strong><img src="{{thumbnailURL}}" /></li>
+    <li><img src="{{thumbnailURL}}" /><strong>{{name}}</strong></li>
 
 
 {{/items}}
@@ -51,7 +51,7 @@ $(document).ready(function() {
     </script>
 
 <h1>Results</h1>
-<div id="resp"></div>
+<div id="resp" style="overflow: auto;height: 300px;"></div>
 
     </body>
 </html>
