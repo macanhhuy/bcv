@@ -16,42 +16,31 @@ $(document).ready(function() {
         format: 'json'
     }).execute(function(response) {
       console.log(response.content.items);
+      showBC(response.content);
     });
+
+
+    function showBC(data){
+      brightcoveItems = data.items; 
+    
+    
+  
+      // Render the locations 
+      var template = $("#brightcoveTemplate").html();
+      var html = Mustache.to_html(template, brightcoveItems);
+      console.log(html);
+    }
 });
 </script>
     <body>
-<script id="locationTemplate" type="text/x-mustache-template">
-      {{#locations}}
-      <div class="location">
+<script id="brightcoveTemplate" type="text/x-mustache-template">
+{{#items}}
 
-        <div class="locTitle">
-          <div class="locCity">{{city}}</div>
-          <div class="locShare" id="{{id}}">insert</div>
-          <div style="clear:both;"></div>
-        </div>
-      
-        <div class="time">
-          <div class="locDate" id="locDate_{{id}}">{{timeZone.displayDate}}</div>
-          <div class="locTime" id="locTime_{{id}}">{{timeZone.displayTime}}</div>
-        </div>
-        
-        <div class="weather">
-          <div class="locWeatherIcon">
-            <img src="{{weather.iconURL}}" />
-          </div>
-          <div class="locWeatherConditions">
-            {{weather.conditions}}<br />
-            <span class="locTemperature">{{weather.tempDescription}}</span> 
-          </div>
-                    <div class="wundergroundAttr">
-                    <a href="{{weather.url}}" target="_blank">
-                        <img src="http://icons.wxug.com/logos/PNG/wundergroundLogo_blue.png" alt="Weather Underground" />                     
-                    </a>
-                    </div>
-          <div style="clear:both"></div>
-        </div>    
-      </div>
-      {{/locations}}
+    <li><strong>{{name}}</strong><img src="{{thumbnailURL}}" /></li>
+
+
+{{/items}}
+
     </script>
 
 <h1>Results</h1>
