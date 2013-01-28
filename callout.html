@@ -31,8 +31,7 @@ $(document).ready(function() {
 	 $("#calloutContainer").on("click", ".videoid", function() {
                 // Retrieve the location details for this location
                 var id = this.id;
-				alert(id);
-                // Build up the html to stick into the activity item
+				  // Build up the html to stick into the activity item
                 var html = "VIDEO ID: " + id;
                 console.log(html);
 				
@@ -52,7 +51,7 @@ $(document).ready(function() {
                         }
                     }
                 };
-
+osapi.jive.core.container.editor().insert("<table><tr><td><b>"+html+"!</b></td></tr></table>");
                 // Post the activity to the activity stream
                 osapi.activities.create(params).execute(
                     function(response) {
