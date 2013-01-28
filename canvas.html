@@ -18,7 +18,7 @@
       var template = $("#brightcoveTemplate").html();
       console.log(template);
       var html = Mustache.to_html(template, brightcoveItems);
-     console.log("HTML: " +html);
+     $("#resp").html(html);
     }
 
 
@@ -40,13 +40,14 @@ $(document).ready(function() {
 </script>
     <body>
 <script id="brightcoveTemplate" type="text/x-mustache-template">
+<ul>
 {{#items}}
 
     <li><strong>{{name}}</strong><img src="{{thumbnailURL}}" /></li>
 
 
 {{/items}}
-
+</ul>
     </script>
 
 <h1>Results</h1>
