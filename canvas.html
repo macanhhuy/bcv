@@ -7,7 +7,19 @@
 <script src="js/libs/plugins.js" type="text/javascript"></script>
     </head>
        <script>
- 
+ (function() {
+       function showBC(data){
+      brightcoveItems = data.items; 
+    
+    
+  
+      // Render the locations 
+      var template = $("#brightcoveTemplate").html();
+      console.log(brightcoveItems);
+      var html = Mustache.to_html(template, brightcoveItems);
+      console.log(html);
+    }
+ });
 $(document).ready(function() {
 
   url = "http://api.brightcove.com/services/library?command=find_all_videos&token=0Z2dtxTdJAxtbZ-d0U7Bhio2V1Rhr5Iafl5FFtDPY8E.";
@@ -20,17 +32,7 @@ $(document).ready(function() {
     });
 
 
-    function showBC(data){
-      brightcoveItems = data.items; 
-    
-    
-  
-      // Render the locations 
-      var template = $("#brightcoveTemplate").html();
-      console.log(brightcoveItems);
-      var html = Mustache.to_html(template, brightcoveItems);
-      console.log(html);
-    }
+ 
 });
 </script>
     <body>
