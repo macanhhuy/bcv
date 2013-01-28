@@ -11,13 +11,13 @@
        function showBC(data){
       brightcoveItems = data.items; 
     
-     console.log(html);
+     
   
       // Render the locations 
       var template = $("#brightcoveTemplate").html();
       console.log(brightcoveItems);
       var html = Mustache.to_html(template, brightcoveItems);
-     
+     console.log(html);
     }
 
 $(document).ready(function() {
