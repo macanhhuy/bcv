@@ -51,23 +51,8 @@ $(document).ready(function() {
                         }
                     }
                 };
-                var embed =  '  <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
-    <object id="myExperience" class="BrightcoveExperience">
-      <param name="bgcolor" value="#FFFFFF" />
-      <param name="width" value="480" />
-      <param name="height" value="270" />
-      <param name="playerID" value="'+id+'" />
-      <param name="playerKey" value="AQ~~%2CAAAB2OQbIXk~%2CEjsI0sjUlMbxzehJ_b8jEVPgu7BQ9IxC" />
-      <param name="isVid" value="true" />
-      <param name="isUI" value="true" />
-      <param name="dynamicStreaming" value="true" />
-
-      <param name="includeAPI" value="true" />
-      <param name="templateReadyHandler" value="BCL.onTemplateReady" />
-    </object>
-    <script type="text/javascript">brightcove.createExperiences();</script>
-  ';
-osapi.jive.core.container.editor().insert(embed);
+             
+osapi.jive.core.container.editor().insert(id);
                 // Post the activity to the activity stream
                 osapi.activities.create(params).execute(
                     function(response) {
