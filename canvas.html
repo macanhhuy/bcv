@@ -9,76 +9,13 @@
        <script>
  
 $(document).ready(function() {
-  // A place for utility functions
-    Util = {
-        locationPool: [], // List of random locations to be populated using Data Pipelining. 
 
-        // Not all Jive environments have people's location data (within .profile object?) available. 
-        // To facilitate this demontration, backfill location data if it's missing. 
-        getRandomLocation: function() {           
-            // Return a random location
-            var index = Math.floor(Math.random()*(this.locationPool.length-1)); 
-            return this.locationPool[index];
-        },    
-    
-        // Returns an offset UTC date string
-        getOffsetDisplayDate: function(ms, format) {
-            return moment.utc().add('ms', ms).format(format)
-        },
-    
-        // Returns a specific location object by id
-        retreiveLocation: function(id) {
-            var loc = locData.locations.filter(function (el) {
-                if (el.id == id) return true;
-            });
-      
-            return loc[0];
-        },
-    
-        // Some logic is dependent upon the home vs canvas view. 
-        isHome: (gadgets.views.getCurrentView().name_ === 'home'),
-        isCanvas: (gadgets.views.getCurrentView().name_ === 'canvas' || gadgets.views.getCurrentView().name_ === 'default'),
-        isEmbedded: (gadgets.views.getCurrentView().name_.indexOf('embedded')>=0)
-    };  
-    var Util = {},
-        locURL = "http://api.shoe.io/location",  // URL to retrieve location data.
-        peopleData,  // Cache from last time people details were received. 
-        locData,  // Cache from last time location details were received. 
-        lastDataCheck,  // Date/Time of last time data was retrieved. 
-        lastQuery,  // The last query for location data.
-        displayDateFormat = "dddd MMMM Do",  
-        displayTimeFormat = "h:mm A", 
-        currentFocusContainer,  // The container that is currently scrolled into view.
-        timer;  // Several items (display date/time, weather) are refreshed on a timer.
-    // Handler once location data is retrieved. 
-    function locationSearchCallback(data) {
-    // Save the data so it's available later. 
-      locData = data.data; 
-    
-      // Loop through the locations, set the offset date
-      for (var ii in locData.locations) {
-          locData.locations[ii].timeZone.displayDate = Util.getOffsetDisplayDate(locData.locations[ii].timeZone.offsetMS, displayDateFormat);
-          locData.locations[ii].timeZone.displayTime = Util.getOffsetDisplayDate(locData.locations[ii].timeZone.offsetMS, displayTimeFormat);
-          locData.locations[ii].id = Math.floor((Math.random()*100000)+1);  // Unique Id to reference for later updates. 
-      }
-  
-      // Render the locations 
-      var template = $("#locationTemplate").html();
-      var html = Mustache.to_html(template, locData);
-      alert(html);
-      
-    // Save the Date/Time we last retrieved data
-    lastDataCheck = new Date();
-    // Kick off updates of display time(s)
-    timer = setInterval(incrementTime, 1000);
-    }
-  // Stuff to do as soon as the DOM is ready;
   url = "http://api.shoe.io/location?q=Da%20Nang";
  osapi.http.get({
       href: url,
         format: 'json'
     }).execute(function(response) {
-      locationSearchCallback(response.content);
+      console.log(response.content.data);
     });
 });
 </script>
