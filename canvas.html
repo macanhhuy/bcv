@@ -16,7 +16,8 @@ function getTopVideos() {
 
 $(document).ready(function() {
   // Stuff to do as soon as the DOM is ready;
-  $.get('http://api.brightcove.com/services/library?command=find_all_videos&token=0Z2dtxTdJAxtbZ-d0U7Bhio2V1Rhr5Iafl5FFtDPY8E.', function(data) {
+  url = "http://api.brightcove.com/services/library?command=find_all_videos&token=0Z2dtxTdJAxtbZ-d0U7Bhio2V1Rhr5Iafl5FFtDPY8E.";
+  $.get(url, function(data) {
   $('#resp').html(data);
  
 }, "json");
