@@ -16,7 +16,9 @@ $(document).ready(function() {
       href: url,
         format: 'json'
     }).execute(function(response) {
-       alert(response.content);
+      var content = response.content
+     
+       alert(content.data);
     });
 });
 </script>
