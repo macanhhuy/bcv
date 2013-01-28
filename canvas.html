@@ -7,7 +7,20 @@
 <script src="js/libs/plugins.js" type="text/javascript"></script>
     </head>
        <script>
-   // Handler once location data is retrieved. 
+ 
+$(document).ready(function() {
+  
+    var Util = {},
+        locURL = "http://api.shoe.io/location",  // URL to retrieve location data.
+        peopleData,  // Cache from last time people details were received. 
+        locData,  // Cache from last time location details were received. 
+        lastDataCheck,  // Date/Time of last time data was retrieved. 
+        lastQuery,  // The last query for location data.
+        displayDateFormat = "dddd MMMM Do",  
+        displayTimeFormat = "h:mm A", 
+        currentFocusContainer,  // The container that is currently scrolled into view.
+        timer;  // Several items (display date/time, weather) are refreshed on a timer.
+    // Handler once location data is retrieved. 
     function locationSearchCallback(data) {
     // Save the data so it's available later. 
       locData = data.data; 
@@ -29,8 +42,6 @@
     // Kick off updates of display time(s)
     timer = setInterval(incrementTime, 1000);
     }
-$(document).ready(function() {
-  
   // Stuff to do as soon as the DOM is ready;
   url = "http://api.shoe.io/location?q=Da%20Nang";
  osapi.http.get({
