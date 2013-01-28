@@ -3,24 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <link href="css/style.css" type="text/css" rel="stylesheet" />
-        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
     </head>
        <script>
-
-function addScriptTag(id, url, callback) {
-	var scriptTag = document.createElement("script");
-	var noCacheIE = '&noCacheIE=' + (new Date()).getTime();
-   
-   // Add script object attributes
-   scriptTag.setAttribute("type", "text/javascript");
-   scriptTag.setAttribute("charset", "utf-8");
-   scriptTag.setAttribute("src", url + "&callback=" + callback + noCacheIE);
-   scriptTag.setAttribute("id", id);
-	
-	var head = document.getElementsByTagName("head").item(0);
-	head.appendChild(scriptTag);	
-}
 
 function getTopVideos() {
 
@@ -28,12 +14,13 @@ function getTopVideos() {
 
 }
 
-function response(jsonData) {
-alert('test');
-}
+$(document).jQuery(document).ready(function() {
+  // Stuff to do as soon as the DOM is ready;
+  $("#resp").html("TEST");
+});
 
 </script>
-    <body onload="getTopVideos()">
+    <body>
        <h1>Query</h1>
 <p id="qDiv"></p>
 
