@@ -28,6 +28,46 @@
 
 
 $(document).ready(function() {
+	 $("#calloutContainer").on("click", ".videoid", function() {
+                // Retrieve the location details for this location
+                var id = this.id;
+				alert(id);
+                // Build up the html to stick into the activity item
+                var html = "VIDEO ID: " + id;
+                console.log(html);
+				
+                // Build up the request to update the user's activity stream
+                var params = {
+                    activity: { 
+                        title: "BrightCove Video", 
+                        body: "", 
+                        verb: "post", 
+                        object: { 
+                            objectType: "article", 
+                            summary: html, 
+                            mediaLink: { 
+                                mediaType: "video", 
+                                id: id
+                            }
+                        }
+                    }
+                };
+
+                // Post the activity to the activity stream
+                osapi.activities.create(params).execute(
+                    function(response) {
+                        var msg = new gadgets.MiniMessage();
+                        if(!response.error) {
+                            msg.createTimerMessage("Posted video " + id + ". ", 5);
+                        } else {
+                            msg.createTimerMessage("Encountered error: " + response.error, 5);
+                        }
+                    }
+                );
+                
+           
+	
+            });
 
   url = "http://api.brightcove.com/services/library?command=find_all_videos&token=0Z2dtxTdJAxtbZ-d0U7Bhio2V1Rhr5Iafl5FFtDPY8E.";
  osapi.http.get({
@@ -52,7 +92,7 @@ $(document).ready(function() {
 <ul>
 {{#items}}
 
-    <li><img src="{{thumbnailURL}}" /><strong>{{name}}</strong></li>
+    <li><img class="videoid" id="{{id}}" src="{{thumbnailURL}}" /><strong>{{name}}</strong></li>
 
 
 {{/items}}
