@@ -52,7 +52,7 @@ $(document).ready(function() {
                     }
                 };
              
-osapi.jive.core.container.editor().insert('<img class="jive_macro jive_macro_youtube" height="350" src="https://magrabbit-bc.jiveon.com/servlet/JiveServlet/downloadImage/1192/__icon_128__.png" width="425" jivemacro="brightcove" ___default_attr="'+id+'" />');
+osapi.jive.core.container.editor().insert('<img class="jive_macro jive_macro_youtube" height="350" src="'+this.src+'" width="425" jivemacro="brightcove" ___default_attr="'+id+'" />');
                 // Post the activity to the activity stream
                 osapi.activities.create(params).execute(
                     function(response) {
