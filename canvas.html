@@ -7,7 +7,28 @@
 
     </head>
        <script>
-
+   // Handler once location data is retrieved. 
+    function locationSearchCallback(data) {
+    // Save the data so it's available later. 
+      locData = data.data; 
+    
+      // Loop through the locations, set the offset date
+      for (var ii in locData.locations) {
+          locData.locations[ii].timeZone.displayDate = Util.getOffsetDisplayDate(locData.locations[ii].timeZone.offsetMS, displayDateFormat);
+          locData.locations[ii].timeZone.displayTime = Util.getOffsetDisplayDate(locData.locations[ii].timeZone.offsetMS, displayTimeFormat);
+          locData.locations[ii].id = Math.floor((Math.random()*100000)+1);  // Unique Id to reference for later updates. 
+      }
+  
+      // Render the locations 
+      var template = $("#locationTemplate").html();
+      var html = Mustache.to_html(template, locData);
+      $("#resp").html(html);
+      
+    // Save the Date/Time we last retrieved data
+    lastDataCheck = new Date();
+    // Kick off updates of display time(s)
+    timer = setInterval(incrementTime, 1000);
+    }
 $(document).ready(function() {
   
   // Stuff to do as soon as the DOM is ready;
@@ -16,15 +37,44 @@ $(document).ready(function() {
       href: url,
         format: 'json'
     }).execute(function(response) {
-      var content = response.content
-     
-       alert(content.data);
+      locationSearchCallback(response.content);
     });
 });
 </script>
     <body>
-       <h1>Query</h1>
-<p id="qDiv"></p>
+<script id="locationTemplate" type="text/x-mustache-template">
+      {{#locations}}
+      <div class="location">
+
+        <div class="locTitle">
+          <div class="locCity">{{city}}</div>
+          <div class="locShare" id="{{id}}">insert</div>
+          <div style="clear:both;"></div>
+        </div>
+      
+        <div class="time">
+          <div class="locDate" id="locDate_{{id}}">{{timeZone.displayDate}}</div>
+          <div class="locTime" id="locTime_{{id}}">{{timeZone.displayTime}}</div>
+        </div>
+        
+        <div class="weather">
+          <div class="locWeatherIcon">
+            <img src="{{weather.iconURL}}" />
+          </div>
+          <div class="locWeatherConditions">
+            {{weather.conditions}}<br />
+            <span class="locTemperature">{{weather.tempDescription}}</span> 
+          </div>
+                    <div class="wundergroundAttr">
+                    <a href="{{weather.url}}" target="_blank">
+                        <img src="http://icons.wxug.com/logos/PNG/wundergroundLogo_blue.png" alt="Weather Underground" />                     
+                    </a>
+                    </div>
+          <div style="clear:both"></div>
+        </div>    
+      </div>
+      {{/locations}}
+    </script>
 
 <h1>Results</h1>
 <div id="resp"></div>
