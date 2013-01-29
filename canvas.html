@@ -23,7 +23,7 @@
 
 
 $(document).ready(function() {
-  $("a[rel^='prettyPhoto']").prettyPhoto();
+
 var prefs = new gadgets.Prefs();
         var readApi = prefs.getString("readApi");
   url = "http://api.brightcove.com/services/library?command=find_all_videos&token="+readApi;
