@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link href="css/style.css" type="text/css" rel="stylesheet" />
+    
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="http://mustache.github.com/extras/mustache.js"></script>
 
@@ -22,6 +23,7 @@
 
 
 $(document).ready(function() {
+  $("a[rel^='prettyPhoto']").prettyPhoto();
 var prefs = new gadgets.Prefs();
         var readApi = prefs.getString("readApi");
   url = "http://api.brightcove.com/services/library?command=find_all_videos&token="+readApi;
@@ -48,6 +50,28 @@ var prefs = new gadgets.Prefs();
 {{/items}}
 </ul>
     </script>
+
+<div id="bcplayer">
+  <!-- Start of Brightcove Player -->
+    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+    <object id="myExperience" class="BrightcoveExperience">
+      <param name="bgcolor" value="#FFFFFF" />
+      <param name="width" value="480" />
+      <param name="height" value="270" />
+      <param name="playerID" value="2031045745001" />
+      <param name="playerKey" value="AQ~~%2CAAAB2OQbIXk~%2CEjsI0sjUlMbxzehJ_b8jEVPgu7BQ9IxC" />
+      <param name="isVid" value="true" />
+      <param name="isUI" value="true" />
+      <param name="dynamicStreaming" value="true" />
+      <!-- params for Universal Player API -->
+      <param name="includeAPI" value="true" />
+      <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+    </object>
+    <script type="text/javascript">brightcove.createExperiences();</script>
+    <!-- End of Brightcove Player -->
+</div>
+
+
 
 <div id="resp" style="overflow: auto;height: 300px;"></div>
 
