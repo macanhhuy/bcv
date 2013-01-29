@@ -39,10 +39,10 @@ var prefs = new gadgets.Prefs();
 </script>
     <body>
 <script id="brightcoveTemplate" type="text/x-mustache-template">
-<ul>
+<ul class="videolist">
 {{#items}}
 
-    <li><img class="thumbnail" src="{{thumbnailURL}}" /><div class="info"><span class="videoname">{{name}}</span></div></li>
+    <li class="videoitem"><img class="thumbnail" src="{{thumbnailURL}}" /><div class="info"><span class="videoname">{{name}}</span></div></li>
 
 
 {{/items}}
