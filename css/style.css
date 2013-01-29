@@ -9,10 +9,24 @@ html, body {
 .videolist{
     list-style:none;
 }
-
+.thumbnail {
+    float: left;
+    border: 2px solid white;
+}
 .videoitem{
-    padding:  5px;
+    padding: 5px;
+    clear: both;
+    background: #D7E7E9;
+    display: block;
+    position: relative;
+    height: 100px;
+    width: 100%;
+    margin: 0 0 5px 0;
+}
+.videoitem:nth-child(2n) {
+        background: white;
 }
 .info .videoname{
     float:left;
+    margin-left: 10px;
 }
