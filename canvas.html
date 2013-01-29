@@ -11,9 +11,7 @@
  
        function showBC(data){
       brightcoveItems = data; 
-    
-     
-  
+
       // Render the locations 
       var template = $("#brightcoveTemplate").html();
       console.log(template);
@@ -24,6 +22,9 @@
 
 
 $(document).ready(function() {
+var prefs = new gadgets.Prefs();
+        var readApi = prefs.getString("readApi");
+        alert(readApi);
 
   url = "http://api.brightcove.com/services/library?command=find_all_videos&token=0Z2dtxTdJAxtbZ-d0U7Bhio2V1Rhr5Iafl5FFtDPY8E.";
  osapi.http.get({
