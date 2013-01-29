@@ -52,7 +52,7 @@
 
 
     <!-- Icons: 3 sizes, 16x16, 48x48, 128x128 -->
-    <Link rel="Icon"       href="images/icon16.png" />
+    <Link rel="Icon"       href="images/bc16.jpg" />
     <Link rel="MediumIcon" href="images/bc48.jpg" />
     <Link rel="LargeIcon"  href="images/bc128.jpg" />
 
@@ -91,9 +91,8 @@
 
   <!-- User Preferences: http://code.google.com/apis/gadgets/docs/reference.html#Userprefs_Ref -->
 
-  <UserPref name="readApi" display_name="Read API Token" datatype="string" default_value="zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow.." required="false" />
+ <UserPref name="readApi" display_name="Read API Token" datatype="string" default_value="zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow.." required="false" />
   <UserPref name="writeApi" display_name="Write APT Token" datatype="string" default_value="zgooH18dKNLyyaIvgcLxXnshbIxfoAsgBkEXfbWPlwydfgE3usr58w.." required="false" />
- 
 
 
   <Content type="html" view="home" href="home.html" preferred_height="350" />
