@@ -35,7 +35,11 @@ var prefs = new gadgets.Prefs();
       showBC(response.content);
     });
 
-
+var docId = 1114;
+osapi.jive.core.documents.get({id: docId}).execute(function(response) {
+    var html = response.data.content.text;
+    console.log(html);
+}
  
 });
 </script>
