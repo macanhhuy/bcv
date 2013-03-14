@@ -40,7 +40,16 @@ osapi.jive.core.documents.get({id: docId}).execute(function(response) {
     var html = response.data.content.text;
     console.log(html);
 });
- 
+ osapi.appdata.get({
+}).execute(function(response) {
+  if (response.error) {
+    alert("Error " + response.error.code + " retrieving application data: " + response.error.message);
+  }
+  else {
+    console.log(response);
+    // Response is an object with properties keyed by userId, and values being an object containing the specified properties for this userId
+  }
+});
 });
 </script>
     <body>
