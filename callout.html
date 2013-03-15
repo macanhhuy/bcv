@@ -5,20 +5,20 @@
 		<link href="css/style.css" type="text/css" rel="stylesheet" />
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
-		
+
 		<script src="js/libs/plugins.js" type="text/javascript"></script>
 	</head>
 	<body>
 	<!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a>. <br/>
 	Not all the features of this widget will work with IE7 and below.</p><![endif]-->
        <script>
- 
+
        function showBC(data){
-      brightcoveItems = data; 
-    
-     
-  
-      // Render the locations 
+      brightcoveItems = data;
+
+
+
+      // Render the locations
       var template = $("#brightcoveTemplate").html();
       console.log(template);
       var html = Mustache.to_html(template, brightcoveItems);
@@ -34,24 +34,24 @@ $(document).ready(function() {
 				  // Build up the html to stick into the activity item
                 var html = "VIDEO ID: " + id;
                 console.log(html);
-				
+
                 // Build up the request to update the user's activity stream
                 var params = {
-                    activity: { 
-                        title: "BrightCove Video", 
-                        body: "", 
-                        verb: "post", 
-                        object: { 
-                            objectType: "article", 
-                            summary: html, 
-                            mediaLink: { 
-                                mediaType: "video", 
+                    activity: {
+                        title: "BrightCove Video",
+                        body: "",
+                        verb: "post",
+                        object: {
+                            objectType: "article",
+                            summary: html,
+                            mediaLink: {
+                                mediaType: "video",
                                 id: id
                             }
                         }
                     }
                 };
-             
+
 osapi.jive.core.container.editor().insert('<img class="jive_macro jive_macro_youtube" height="250" src="'+this.src+'" width="300" jivemacro="brightcove" ___default_attr="'+id+'" />');
                 // Post the activity to the activity stream
                 osapi.activities.create(params).execute(
@@ -64,9 +64,9 @@ osapi.jive.core.container.editor().insert('<img class="jive_macro jive_macro_you
                         }
                     }
                 );
-                
-           
-	
+
+
+
             });
 
   url = "http://api.brightcove.com/services/library?command=find_all_videos&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
@@ -79,15 +79,15 @@ osapi.jive.core.container.editor().insert('<img class="jive_macro jive_macro_you
     });
 
 
- 
+
 });
 </script>
 
 		<div id="calloutContainer">
-		
+
 		</div>
-		
-	
+
+
 		<script id="brightcoveTemplate" type="text/x-mustache-template">
 <ul>
 {{#items}}
@@ -98,6 +98,6 @@ osapi.jive.core.container.editor().insert('<img class="jive_macro jive_macro_you
 {{/items}}
 </ul>
     </script>
-		
+
 	</body>
 </html>

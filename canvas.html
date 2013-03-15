@@ -20,10 +20,37 @@
      $("#resp").html(html);
     }
 
+function createAnnouncements() {
+    var announcement1 = {
+        subject : "A test announcement 1",
+        content : {text:"<p>Test Announcement 1</p>"}
+    };
+    var announcement2 = {
+        subject : "A test announcement 2",
+        content : {text:"<p>Test Announcement 2</p>"}
+    };
+    var announcement3 = {
+        subject : "A test announcement 3",
+        content : {text:"<p>Test Announcement 3</p>"}
+    };
 
+    var batch = osapi.newBatch();
+    batch.add("announcement1", osapi.jive.corev3.announcements.create(announcement1));
+    batch.add("announcement2", osapi.jive.corev3.announcements.create(announcement2));
+    batch.add("announcement3", osapi.jive.corev3.announcements.create(announcement3));
+
+    batch.execute(function(data) {
+        if (data.error) {
+            //handle error
+        }
+        console.log("First announcement's subject: " + data["announcement1"].subject);
+        console.log("Second announcement's subject: " + data["announcement2"].subject);
+        console.log("Third announcement's subject: " + data["announcement3"].subject);
+    });
+}
 
 $(document).ready(function() {
-
+createAnnouncements();
 var prefs = new gadgets.Prefs();
         var readApi = prefs.getString("readApi");
   url = "http://api.brightcove.com/services/library?command=find_all_videos&token="+readApi;
