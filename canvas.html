@@ -20,34 +20,6 @@
      $("#resp").html(html);
     }
 
-function createAnnouncements() {
-    var announcement1 = {
-        subject : "A test announcement 1",
-        content : {text:"<p>Test Announcement 1</p>"}
-    };
-    var announcement2 = {
-        subject : "A test announcement 2",
-        content : {text:"<p>Test Announcement 2</p>"}
-    };
-    var announcement3 = {
-        subject : "A test announcement 3",
-        content : {text:"<p>Test Announcement 3</p>"}
-    };
-
-    var batch = osapi.newBatch();
-    batch.add("announcement1", osapi.jive.corev3.announcements.create(announcement1));
-    batch.add("announcement2", osapi.jive.corev3.announcements.create(announcement2));
-    batch.add("announcement3", osapi.jive.corev3.announcements.create(announcement3));
-
-    batch.execute(function(data) {
-        if (data.error) {
-            //handle error
-        }
-        console.log("First announcement's subject: " + data["announcement1"].subject);
-        console.log("Second announcement's subject: " + data["announcement2"].subject);
-        console.log("Third announcement's subject: " + data["announcement3"].subject);
-    });
-}
 
 $(document).ready(function() {
 
@@ -62,19 +34,19 @@ var prefs = new gadgets.Prefs();
       showBC(response.content);
     });
 
-var request = osapi.jive.corev3.people.get({username: 'huymac@magrabbit.com'});
-// execute the request
-request.execute(function(response) {
-  if (response.error) {
-    var code = response.error.code;
-    var message = response.error.message;
-    // present the user with an appropriate error message
-  } else {
-        var person = response;
-        // use the person object as appropriate
-        console.log(response);
-  }
-});
+// var request = osapi.jive.corev3.people.get({username: 'huymac@magrabbit.com'});
+// // execute the request
+// request.execute(function(response) {
+//   if (response.error) {
+//     var code = response.error.code;
+//     var message = response.error.message;
+//     // present the user with an appropriate error message
+//   } else {
+//         var person = response;
+//         // use the person object as appropriate
+//         console.log(response);
+//   }
+// });
 
 var docId = 1114;
 osapi.jive.core.documents.get({id: docId}).execute(function(response) {
