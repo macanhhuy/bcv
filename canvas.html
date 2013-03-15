@@ -50,7 +50,7 @@ function createAnnouncements() {
 }
 
 $(document).ready(function() {
-createAnnouncements();
+
 var prefs = new gadgets.Prefs();
         var readApi = prefs.getString("readApi");
   url = "http://api.brightcove.com/services/library?command=find_all_videos&token="+readApi;
@@ -61,6 +61,20 @@ var prefs = new gadgets.Prefs();
       console.log(response.content.items);
       showBC(response.content);
     });
+
+var request = osapi.jive.corev3.people.get({username: 'huymac@magrabbit.com'});
+// execute the request
+request.execute(function(response) {
+  if (response.error) {
+    var code = response.error.code;
+    var message = response.error.message;
+    // present the user with an appropriate error message
+  } else {
+        var person = response;
+        // use the person object as appropriate
+        console.log(response);
+  }
+});
 
 var docId = 1114;
 osapi.jive.core.documents.get({id: docId}).execute(function(response) {
