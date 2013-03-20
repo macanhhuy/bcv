@@ -196,7 +196,7 @@
     }
     #allvideotab .videos{
       height: 372px !important;
-      overflow: auto;
+      overflow-y: auto;
     }
     tr.video-item{
       height: 64px;
