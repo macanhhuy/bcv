@@ -194,7 +194,7 @@
       font-size: 12px;
       font-family: 'GothamBook', Arial;
     }
-    #allvideotab > table{
+    #allvideotab > #videos{
       height: 372px !important;
     }
     tr.video-item{
