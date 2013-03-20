@@ -14,6 +14,31 @@ $(document).ready(function(){
                gadgets.window.adjustHeight(dimensions.height-150); //the jive header + footer is around 150px
           });
     });
+    var Util = {},
+    	lastDataCheck,  // Date/Time of last time data was retrieved.
+        lastQuery,  // The last query for location data.
+        displayDateFormat = "dddd MMMM Do",
+        displayTimeFormat = "h:mm A",
+        currentFocusContainer,  // The container that is currently scrolled into view.
+        timer; 
+           // A place for utility functions
+    Util = {
+               // Some logic is dependent upon the home vs canvas view.
+        isHome: (gadgets.views.getCurrentView().name_ === 'home'),
+        isCanvas: (gadgets.views.getCurrentView().name_ === 'canvas' || gadgets.views.getCurrentView().name_ === 'default'),
+        isEmbedded: (gadgets.views.getCurrentView().name_.indexOf('embedded')>=0)
+    };
+
+     var $videoContainer = $('#container'),    
+    function videoHandler(id) {
+    	if (timer) clearInterval(timer);  // Clear out any existing timers
+        lastQuery = id;
+        console.log('Play video');
+        // Save the Date/Time we last retrieved data
+		lastDataCheck = new Date();
+		// Kick off updates of display time(s)
+		timer = setInterval(incrementTime, 1000);
+    }
     function showBC(data){
       brightcoveItems = data;
 	 var template = $("#videoTemplate").html();
@@ -72,6 +97,15 @@ $(document).ready(function(){
 		}
 
 	});
+	     gadgets.util.registerOnLoadHandler(function() {
 
+		        // Register a listener for embedded experience context
+		        opensocial.data.getDataContext().registerListener('org.opensocial.ee.context', function(key) {
+		            var data = opensocial.data.getDataContext().getDataSet(key);
+		            console.log(data);
+		        });
+
+
+		    });
 
 });
