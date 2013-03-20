@@ -54,43 +54,7 @@
           <th class="video-star"><span class="head-star"></span></th>
         </tr>
 
-        <tr class="video-item"  id="2180516443001">
-          <td>
-            <div class="col1" style="width: 327px;">
-              <div class="video-thumbnail" style="width:96px;height:63px;float:left;display:inline;backrgound: blue;position:relative;">
-                <img style="width: 96px; height:63px;" src="https://github.com/macanhhuy/files/raw/master/thumbnail.jpg" />
-                <span class="video-time" style="position:absolute;bottom:0;right:0;background:black;color: white; padding:2px 4px; opacity: .8;">5:04</span>
-              </div>
-              <div class="video-title" style="">
-
-              <h5>Airport Video</h5>
-              Vestibulum ac neque in massa porttitor lacinia. Vestibulum ac neque in massa porttitor lacinia ...
-
-            </div>
-            </div>
-          </td>
-          <td>
-            <div class="col2">
-            10/13/11
-            </div>
-          </td>
-          <td>
-            <div class="col3">
-              Mary
-            Masterson
-            </div>
-          </td>
-          <td>
-            <div class="col4">
-              <span class="star active">
-
-              </span>
-            </div>
-
-          </td>
-
-
-        </tr>
+      
 
       </table>
     </div>
@@ -117,6 +81,46 @@
    <embed src="http://c.brightcove.com/services/viewer/federated_f9?isVid=1" bgcolor="#FFFFFF" flashVars="@videoPlayer={{id}}&playerID=2031045745001&playerKey=AQ~~,AAAB2OQbIXk~,EjsI0sjUlMbxzehJ_b8jEVPgu7BQ9IxC&domain=embed&dynamicStreaming=true" base="http://admin.brightcove.com" name="flashObj" width="486" height="412" seamlesstabbing="false" type="application/x-shockwave-flash" allowFullScreen="true" swLiveConnect="true" allowScriptAccess="always" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
    </embed>
    </object>
+    </script>
+    <script type="text/x-mustache-template" id="video-item">
+    {{#items}}
+      <tr class="video-item"  id="{{id}}">
+          <td>
+            <div class="col1" style="width: 327px;">
+              <div class="video-thumbnail" style="width:96px;height:63px;float:left;display:inline;backrgound: blue;position:relative;">
+                <img style="width: 96px; height:63px;" src="{{thumbnailURL}}" />
+                <span class="video-time" style="position:absolute;bottom:0;right:0;background:black;color: white; padding:2px 4px; opacity: .8;">5:04</span>
+              </div>
+              <div class="video-title" style="">
+
+              <h5>{{name}}</h5>
+              {{shortDescription}}
+
+            </div>
+            </div>
+          </td>
+          <td>
+            <div class="col2">
+            {{creationDate}}
+            </div>
+          </td>
+          <td>
+            <div class="col3">
+              Username
+            </div>
+          </td>
+          <td>
+            <div class="col4">
+              <span class="star active">
+
+              </span>
+            </div>
+
+          </td>
+
+
+        </tr>
+        {{/items}}
     </script>
 <script type="text/javascript"> Cufon.now(); </script>
 </body>

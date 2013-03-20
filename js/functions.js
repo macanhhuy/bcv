@@ -43,10 +43,19 @@ $(document).ready(function(){
 
     function showBC(data){
       brightcoveItems = data;
-	 var template = $("#videoTemplate").html();
+	 var template = $("#video-item").html();
        var html = Mustache.to_html(template, brightcoveItems);
-       osapi.jive.core.container.editor().insert('xxxxxxx');
+       $("#videos table").append(html);
     }
+
+      url = "http://api.brightcove.com/services/library?command=find_all_videos&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
+ 	osapi.http.get({
+      href: url,
+        format: 'json'
+    }).execute(function(response) {
+      console.log(response.content.items);
+      showBC(response.content);
+    });
 
     $("tr.video-item").click(function(){
     	$("tr.video-item").not(this).removeClass("active");
