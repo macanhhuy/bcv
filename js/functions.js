@@ -16,7 +16,9 @@ $(document).ready(function(){
     });
 
     $("tr.video-item").click(function(){
+    	$("tr.video-item").removeClass("active");
     	$(this).toggleClass("active");
+
     	$(".insert-video").toggleClass("disable");
     	if($(".insert-video").hasClass("disable")){
     		Cufon.replace('.insert-video span', {
@@ -33,6 +35,16 @@ $(document).ready(function(){
     	}
 
     });
+    $(".insert-video").click(function({
+    	if($(".insert-video").hasClass("disable")){
+    		return;
+    	}
+    	else{
+    		console.log($("tr.video-item.active").attr("id"));
+    	}
+
+    }));
+
 	$("input.keyword").focusin(function () {
   			$(this).next("span").css('display','inline');
 	});
