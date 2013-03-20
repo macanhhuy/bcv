@@ -194,7 +194,7 @@
       font-size: 12px;
       font-family: 'GothamBook', Arial;
     }
-    #allvideotab > div{
+    #allvideotab .videos{
       height: 372px !important;
       overflow: auto;
     }
@@ -266,16 +266,16 @@
     	display: block;
     	margin: auto;
     	top: 50%;
-		
+
 		left: 50%;
-		
+
 		margin-top: -8px;
     }
      .star.active, .star:hover{
 
     	background: url(images/active-star.png);
     }
-    #container, #search, #tabs, #videos table{
+    #container, #search, #tabs, .videos table{
     	width: 560px;
 
     }

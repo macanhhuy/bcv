@@ -55,7 +55,7 @@ $(document).ready(function(){
         format: 'json'
     }).execute(function(response) {
       console.log(response.content.items);
-      showBC(response.content,"#videos table");
+      showBC(response.content,"#allvideotab .videos table");
     });
  	/*====MY VIDEOS====*/
 
@@ -65,7 +65,7 @@ $(document).ready(function(){
         format: 'json'
     }).execute(function(response) {
       console.log(response.content.items);
-      showBC(response.content, "#myvideotab table");
+      showBC(response.content, "#myvideotab .videos table");
     });
 
  	/*====END VIDEOS====*/
