@@ -16,7 +16,7 @@ $(document).ready(function(){
     });
 
     $("tr.video-item").click(function(){
-    	$("tr.video-item").removeClass("active");
+    	$("tr.video-item").not(this).removeClass("active");
     	$(this).toggleClass("active");
 
     	$(".insert-video").toggleClass("disable");
