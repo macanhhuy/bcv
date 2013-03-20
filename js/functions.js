@@ -10,7 +10,8 @@ $(document).ready(function(){
     //If you have width: auto or 100% it will also trigger whenever a user changes their browser window (width) size.
     $(window).resize(function(){
           jive.canvas.getCanvasDimensions(function(dimensions) {
-               gadgets.window.adjustHeight(660); //the jive header + footer is around 150px
+          	console.log(dimensions);
+               gadgets.window.adjustHeight(dimensions.height -150); //the jive header + footer is around 150px
           });
     });
 
