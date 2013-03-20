@@ -47,7 +47,13 @@ $(document).ready(function(){
     	}
     	else{
     		console.log($("tr.video-item.active").attr("id"));
-    		osapi.jive.core.container.editor().insert($("#videoTemplate").html());
+    		var data = {
+    			"id" : $("tr.video-item.active").attr("id")
+    		};
+    		 var template = $("#videoTemplate").html();
+	      console.log(template);
+	      var html = Mustache.to_html(template, data);
+	    osapi.jive.core.container.editor().insert(html);
     	}
 
     });

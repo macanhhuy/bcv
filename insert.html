@@ -54,7 +54,7 @@
           <th class="video-star"><span class="head-star"></span></th>
         </tr>
 
-        <tr class="video-item"  id="123456">
+        <tr class="video-item"  id="2180516443001">
           <td>
             <div class="col1" style="width: 327px;">
               <div class="video-thumbnail" style="width:96px;height:63px;float:left;display:inline;backrgound: blue;position:relative;">
@@ -105,19 +105,18 @@
  </div>
   </div>
     <script id="videoTemplate" type="text/x-mustache-template">
-    Video ID: {{#id}}
-    <object id="flashObj" width="486" height="412" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0">
-    <param name="movie" value="http://c.brightcove.com/services/viewer/federated_f9?isVid=1" />
-    <param name="bgcolor" value="#FFFFFF" />
-    <param name="flashVars" value="playerID=2031045745001&playerKey=AQ~~,AAAB2OQbIXk~,EjsI0sjUlMbxzehJ_b8jEVPgu7BQ9IxC&domain=embed&dynamicStreaming=true" />
-    <param name="base" value="http://admin.brightcove.com" />
-    <param name="seamlesstabbing" value="false" />
-    <param name="allowFullScreen" value="true" />
-    <param name="swLiveConnect" value="true" />
-    <param name="videoPlayer" value="2180516443001" />
-    <param name="allowScriptAccess" value="always" />
-    <embed src="http://c.brightcove.com/services/viewer/federated_f9?isVid=1" bgcolor="#FFFFFF" flashVars="videoPlayer=2180516443001&playerID=2031045745001&playerKey=AQ~~,AAAB2OQbIXk~,EjsI0sjUlMbxzehJ_b8jEVPgu7BQ9IxC&domain=embed&dynamicStreaming=true" base="http://admin.brightcove.com" name="flashObj" width="486" height="412" seamlesstabbing="false" type="application/x-shockwave-flash" allowFullScreen="true" swLiveConnect="true" allowScriptAccess="always" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
-    </object>
+   <object id="flashObj" width="486" height="412" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0">
+   <param name="movie" value="http://c.brightcove.com/services/viewer/federated_f9?isVid=1" />
+   <param name="bgcolor" value="#FFFFFF" />
+   <param name="flashVars" value="@videoPlayer={{id}}&playerID=2031045745001&playerKey=AQ~~,AAAB2OQbIXk~,EjsI0sjUlMbxzehJ_b8jEVPgu7BQ9IxC&domain=embed&dynamicStreaming=true" />
+   <param name="base" value="http://admin.brightcove.com" />
+   <param name="seamlesstabbing" value="false" />
+   <param name="allowFullScreen" value="true" />
+   <param name="swLiveConnect" value="true" />
+   <param name="allowScriptAccess" value="always" />
+   <embed src="http://c.brightcove.com/services/viewer/federated_f9?isVid=1" bgcolor="#FFFFFF" flashVars="@videoPlayer={{id}}&playerID=2031045745001&playerKey=AQ~~,AAAB2OQbIXk~,EjsI0sjUlMbxzehJ_b8jEVPgu7BQ9IxC&domain=embed&dynamicStreaming=true" base="http://admin.brightcove.com" name="flashObj" width="486" height="412" seamlesstabbing="false" type="application/x-shockwave-flash" allowFullScreen="true" swLiveConnect="true" allowScriptAccess="always" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+   </embed>
+   </object>
     </script>
 <script type="text/javascript"> Cufon.now(); </script>
 </body>
