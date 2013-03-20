@@ -4,7 +4,7 @@ Cufon.replace('.total-video, h1, h2, p', { fontFamily: 'GothamLight' });
 Cufon.replace('.status p', { fontFamily: 'GothamMedium' });
 
 $(document).ready(function(){
-   
+
 	  gadgets.window.adjustHeight(660); //or whatever default height you please
     //this will trigger the event handler below. Note that window in this case refers to the app iframe.
     //If you have width: auto or 100% it will also trigger whenever a user changes their browser window (width) size.
@@ -18,9 +18,20 @@ $(document).ready(function(){
     $("tr.video-item").click(function(){
     	$(this).toggleClass("active");
     	$(".insert-video").toggleClass("disable");
-    	Cufon.replace('.insert-video span', {
-			color: 'white'
+    	if($(".insert-video").hasClass("disable")){
+    		Cufon.replace('.insert-video span', {
+			color: '#aaaaaa',
+			fontFamily: 'GothamLight'
 		});
+
+    	}
+    	else {
+    		Cufon.replace('.insert-video span', {
+			color: 'white',
+			fontFamily: 'GothamLight'
+			});
+    	}
+
     });
 	$("input.keyword").focusin(function () {
   			$(this).next("span").css('display','inline');
