@@ -104,23 +104,23 @@ $(document).ready(function(){
 	});
 
 	$(".insert-cancel").click(function(){
-		  osapi.jive.core.container.closeApp( {
-                    data: {
-                        display: {
-                            type: "text",
-                            label: 'Play Video'
-                        },
-                        target: {
-                            type: "embed",
-                            view: "player",
-                            context: {
-                                id: 2180516443001
-                            }
-                        }
-                    }
-                });
-            });
-
+		  // osapi.jive.core.container.closeApp( {
+    //                 data: {
+    //                     display: {
+    //                         type: "text",
+    //                         label: 'Play Video'
+    //                     },
+    //                     target: {
+    //                         type: "embed",
+    //                         view: "player",
+    //                         context: {
+    //                             id: 2180516443001
+    //                         }
+    //                     }
+    //                 }
+    //             });
+    //         });
+		  osapi.jive.core.container.closeApp();
 
 	     gadgets.util.registerOnLoadHandler(function() {
 
