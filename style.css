@@ -194,7 +194,7 @@
       font-size: 12px;
       font-family: 'GothamBook', Arial;
     }
-    #allvideotab > #videos{
+    #allvideotab > div{
       height: 372px !important;
       overflow: auto;
     }

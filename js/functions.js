@@ -59,7 +59,7 @@ $(document).ready(function(){
     });
  	/*====MY VIDEOS====*/
 
- 	 url = "http://api.brightcove.com/services/library?command=find_all_videos&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
+ 	 url = "http://api.brightcove.com/services/library?command=search_videos&any=video&none=private&page_size=5&media_delivery=default&sort_by=DISPLAY_NAME%3AASC&page_number=0&get_item_count=true&callback=?&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
  	osapi.http.get({
       href: url,
         format: 'json'
