@@ -18,7 +18,7 @@ $(document).ready(function(){
       brightcoveItems = data;
 	 var template = $("#videoTemplate").html();
        var html = Mustache.to_html(template, brightcoveItems);
-       osapi.jive.core.container.editor().insert(html);
+       osapi.jive.core.container.editor().insert('xxxxxxx');
     }
 
     $("tr.video-item").click(function(){
@@ -49,7 +49,7 @@ $(document).ready(function(){
     	else{
     		console.log($("tr.video-item.active").attr("id"));
     		data['id'] = '12345';
-    		showBC(data);
+    		osapi.jive.core.container.editor().insert($("#videoTemplate").html());
     	}
 
     });
