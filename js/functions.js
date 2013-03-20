@@ -8,11 +8,11 @@ $(document).ready(function(){
 	  gadgets.window.adjustHeight(660); //or whatever default height you please
     //this will trigger the event handler below. Note that window in this case refers to the app iframe.
     //If you have width: auto or 100% it will also trigger whenever a user changes their browser window (width) size.
-    // $(window).resize(function(){
-    //       jive.canvas.getCanvasDimensions(function(dimensions) {
-    //            gadgets.window.adjustHeight(dimensions.height -150); //the jive header + footer is around 150px
-    //       });
-    // });
+    $(window).resize(function(){
+          jive.canvas.getCanvasDimensions(function(dimensions) {
+               gadgets.window.adjustHeight(660); //the jive header + footer is around 150px
+          });
+    });
 
 
 	$("input.keyword").focusin(function () {
