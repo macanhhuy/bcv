@@ -48,7 +48,7 @@ $(document).ready(function(){
     	}
     	else{
     		console.log($("tr.video-item.active").attr("id"));
-    		data['id'] = '12345';
+    		data['id'] = $("tr.video-item.active").attr("id");
     		osapi.jive.core.container.editor().insert($("#videoTemplate").html());
     	}
 
