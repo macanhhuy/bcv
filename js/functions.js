@@ -14,13 +14,14 @@ $(document).ready(function(){
                gadgets.window.adjustHeight(dimensions.height-150); //the jive header + footer is around 150px
           });
     });
+
     var Util = {},
     	lastDataCheck,  // Date/Time of last time data was retrieved.
         lastQuery,  // The last query for location data.
         displayDateFormat = "dddd MMMM Do",
         displayTimeFormat = "h:mm A",
         currentFocusContainer,  // The container that is currently scrolled into view.
-        timer; 
+        timer;
            // A place for utility functions
     Util = {
                // Some logic is dependent upon the home vs canvas view.
@@ -39,6 +40,7 @@ $(document).ready(function(){
 		// Kick off updates of display time(s)
 		timer = setInterval(incrementTime, 1000);
     }
+
     function showBC(data){
       brightcoveItems = data;
 	 var template = $("#videoTemplate").html();
@@ -51,6 +53,7 @@ $(document).ready(function(){
     	$(this).toggleClass("active");
 
     	$(".insert-video").toggleClass("disable");
+
     	if($(".insert-video").hasClass("disable")){
     		Cufon.replace('.insert-video span', {
 			color: '#aaaaaa',
@@ -66,6 +69,7 @@ $(document).ready(function(){
     	}
 
     });
+
      $(".insert-video").click(function(){
     	if($(".insert-video").hasClass("disable")){
     		return;
@@ -90,6 +94,7 @@ $(document).ready(function(){
 		$("input.keyword").val("");
 		//$(this).hide();
 	});
+
 	$("input.keyword").focusout(function(e) {
 
 		if($("input.keyword").val()==""){
@@ -115,7 +120,7 @@ $(document).ready(function(){
                     }
                 });
             });
-});
+
 
 	     gadgets.util.registerOnLoadHandler(function() {
 
