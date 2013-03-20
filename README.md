@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 brightcoveapps
 ==============g the App
 To load this app in your Jive environment, follow these steps:
@@ -99,3 +100,7 @@ Data Pipelining
 Accessing data via Jive Connects API
 * https://community.jivesoftware.com/docs/DOC-65829
 * https://community.jivesoftware.com/docs/DOC-65892
+=======
+bcv
+===
+>>>>>>> 90570fdd228589dcca1b0f38c012531a3affe383
