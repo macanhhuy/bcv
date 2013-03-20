@@ -97,6 +97,26 @@ $(document).ready(function(){
 		}
 
 	});
+
+	$(".insert-cancel").click(function(){
+		  osapi.jive.core.container.closeApp( {
+                    data: {
+                        display: {
+                            type: "text",
+                            label: 'TEST'
+                        },
+                        target: {
+                            type: "embed",
+                            view: "insert",
+                            context: {
+                                id: 123456
+                            }
+                        }
+                    }
+                });
+            });
+});
+
 	     gadgets.util.registerOnLoadHandler(function() {
 
 		        // Register a listener for embedded experience context
