@@ -16,8 +16,8 @@ $(document).ready(function(){
     });
 
     $("tr.video-item").click(function(){
-    	$(this).addClass("active");
-    	$(".insert-video").removeClass("disable");
+    	$(this).toggleClass("active");
+    	$(".insert-video").toggleClass("disable");
     });
 	$("input.keyword").focusin(function () {
   			$(this).next("span").css('display','inline');
