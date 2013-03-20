@@ -19,7 +19,7 @@
 				font-weight: normal;
 				font-style: normal;
 		}
-    
+
     @font-face {
 				font-family: 'GothamLight';
 				src: url('fonts/gothamlight.eot');
@@ -119,7 +119,7 @@
     .nav-tabs > li > a, .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
 		color: #777777;
 		cursor: default;
-		
+
 		background: #494949;
 		font-size: 16px;
 		border: none;
@@ -171,7 +171,7 @@
     }
     th.active, th:hover{
       background: url(images/tbheader-active.png);
-      
+
     }
     th:last-child{
     	border-right: none;
@@ -194,14 +194,29 @@
       font-size: 12px;
       font-family: 'GothamBook', Arial;
     }
+    #allvideotab > table{
+      height: 372px !important;
+    }
+    tr.video-item{
+      height: 64px;
+      color: #999;
+      font-size: 12px;
+      font-family: 'GothamBook', Arial;
+    }
+    td:hover{
+        cursor: pointer;
+    }
+    tr.video-item:hover{
+        cursor: pointer;
+    }
     .video-item.active, .video-item:hover{
     	background: #64503f;
     }
     tbody tr > td > div{
       height: 64px;
       position: relative;
-     
-   
+
+
     vertical-align: middle;
     }
     div.col3{
@@ -215,7 +230,7 @@
       display:inline;
       padding-left:10px;
       line-height: 110%;
-      
+
     }
     .video-title > h5{
       margin: 0;
@@ -225,10 +240,10 @@
       font-family: 'GothamBook', Arial;
     }
     div.col2, div.col3{
-     
+
       font-weight:bold;
       text-align: center;
-     
+
     }
     div.col2{
        line-height: 64px;
@@ -256,7 +271,7 @@
 		margin-top: -8px;
     }
      .star.active, .star:hover{
-    	
+
     	background: url(images/active-star.png);
     }
     #container, #search, #tabs, #videos table{
@@ -326,7 +341,7 @@
 		display: block;
 		float: left;
 		background: url(images/btn.png) top left no-repeat;
-	
+
     }
     .button > span + span{
     	width: 24px;
@@ -386,7 +401,7 @@
   display: inline-block;
   color: #8e8e8e !important;
   font-family: 'GothamLightItalic' !important;
-  
+
 
 }
 .row1 > input[type=file]{
@@ -460,7 +475,7 @@ margin-top: 74px;
     height: 88px;
     opacity: .2;
     margin: 0 auto;
-    
+
   }
   .status{
     margin: 0 auto;
