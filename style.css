@@ -153,7 +153,7 @@
 	li{
 		position: relative;
 	}
-	li.active > span, li:hover > span {
+	li.active > span{
 		width: 32px;
 		height: 14px;
 		background: url(images/tab-active.png) no-repeat;

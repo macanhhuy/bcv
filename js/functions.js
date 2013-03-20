@@ -15,7 +15,10 @@ $(document).ready(function(){
           });
     });
 
-
+    $("tr.video-item").click(function(){
+    	$(this).addClass("active");
+    	$(".insert-video").removeClass("disable");
+    });
 	$("input.keyword").focusin(function () {
   			$(this).next("span").css('display','inline');
 	});
