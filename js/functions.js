@@ -91,6 +91,10 @@ $(document).ready(function(){
 
     });
 
+    $("span.star").live('click',function(){
+    	$(this).toggleClass('active');
+    });
+
      $(".insert-video").live('click', function(){
     	if($(".insert-video").hasClass("disable")){
     		return;
