@@ -108,13 +108,13 @@ $(document).ready(function(){
                     data: {
                         display: {
                             type: "text",
-                            label: 'TEST'
+                            label: 'Play Video'
                         },
                         target: {
                             type: "embed",
-                            view: "insert",
+                            view: "success",
                             context: {
-                                id: 123456
+                                id: 2180516443001
                             }
                         }
                     }
