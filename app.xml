@@ -53,8 +53,8 @@
 
 
     <!-- Icons: 3 sizes, 16x16, 48x48, 128x128 -->
-    <Link rel="Icon"       href="images/bc16.jpg" />
-    <Link rel="MediumIcon" href="images/bc48.jpg" />
+    <Link rel="Icon"       href="images/bcico.png" />
+    <Link rel="MediumIcon" href="images/bcico.png" />
     <Link rel="LargeIcon"  href="images/bc128.jpg" />
 
     <!-- Screenshots: 600w x 400h, should include at least 1 and up to 5 -->
@@ -99,7 +99,7 @@
 
   <Content type="html" view="home" href="home.html" preferred_height="600" preferred_width="800" />
  <Content type="html" view="canvas" href="canvas.html" preferred_height="640"/>
-  <Content type="html" view="insert" href="insert.html" preferred_height="610" preferred_width="610"/>
+  <Content type="html" view="insert" href="insert.html" preferred_height="640" preferred_width="610"/>
   <Content type="html" view="upload" href="upload.html" preferred_height="600" preferred_width="860"/>
   <Content type="html" view="success" href="success.html" preferred_height="600" preferred_width="700"/>
 </Module>
