@@ -29,7 +29,7 @@ $(document).ready(function(){
         isEmbedded: (gadgets.views.getCurrentView().name_.indexOf('embedded')>=0)
     };
 
-     var $videoContainer = $('#container'),    
+     var $videoContainer = $('#container');
     function videoHandler(id) {
     	if (timer) clearInterval(timer);  // Clear out any existing timers
         lastQuery = id;
