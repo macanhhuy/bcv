@@ -54,7 +54,7 @@ $(document).ready(function(){
       href: url,
         format: 'json'
     }).execute(function(response) {
-      console.log(response.content.items);
+      console.log(response.content.items.count);
       showBC(response.content,"#allvideotab .videos table");
     });
  	/*====MY VIDEOS====*/
