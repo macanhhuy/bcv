@@ -111,8 +111,8 @@ $(document).ready(function(){
                             label: 'Play Video'
                         },
                         target: {
-                            type: "embed",
-                            view: "success",
+                            type: "html",
+                            view: "player",
                             context: {
                                 id: 2180516443001
                             }
