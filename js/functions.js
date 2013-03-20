@@ -59,9 +59,9 @@ $(document).ready(function(){
     });
  	/*====MY VIDEOS====*/
 
- 	 url = "http://api.brightcove.com/services/library?command=search_videos&any=video&none=private&page_size=5&media_delivery=default&sort_by=DISPLAY_NAME%3AASC&page_number=0&get_item_count=true&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
+ 	 url2 = "http://api.brightcove.com/services/library?command=search_videos&any=video&none=private&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
  	osapi.http.get({
-      href: url,
+      href: url2,
         format: 'json'
     }).execute(function(response) {
       console.log(response.content.items);
