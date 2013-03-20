@@ -18,6 +18,9 @@ $(document).ready(function(){
     $("tr.video-item").click(function(){
     	$(this).toggleClass("active");
     	$(".insert-video").toggleClass("disable");
+    	Cufon.replace('.insert-video span', {
+			color: 'white'
+		});
     });
 	$("input.keyword").focusin(function () {
   			$(this).next("span").css('display','inline');
