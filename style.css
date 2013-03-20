@@ -196,6 +196,7 @@
     }
     #allvideotab > #videos{
       height: 372px !important;
+      overflow: auto;
     }
     tr.video-item{
       height: 64px;
@@ -265,9 +266,9 @@
     	display: block;
     	margin: auto;
     	top: 50%;
-		position: absolute;
+		
 		left: 50%;
-		margin-left: -7px;
+		
 		margin-top: -8px;
     }
      .star.active, .star:hover{

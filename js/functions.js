@@ -41,22 +41,34 @@ $(document).ready(function(){
 		timer = setInterval(incrementTime, 1000);
     }
 
-    function showBC(data){
+    function showBC(data, container){
       brightcoveItems = data;
 	 var template = $("#video-item").html();
-       var html = Mustache.to_html(template, brightcoveItems);
-       $("#videos table").append(html);
-    }
 
+       var html = Mustache.to_html(template, brightcoveItems);
+       $(container).append(html);
+    }
+    /*====ALL VIDEOS====*/
       url = "http://api.brightcove.com/services/library?command=find_all_videos&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
  	osapi.http.get({
       href: url,
         format: 'json'
     }).execute(function(response) {
       console.log(response.content.items);
-      showBC(response.content);
+      showBC(response.content,"#videos table");
+    });
+ 	/*====MY VIDEOS====*/
+
+ 	 url = "http://api.brightcove.com/services/library?command=find_all_videos&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
+ 	osapi.http.get({
+      href: url,
+        format: 'json'
+    }).execute(function(response) {
+      console.log(response.content.items);
+      showBC(response.content, "#myvideotab table");
     });
 
+ 	/*====END VIDEOS====*/
     $("tr.video-item").click(function(){
     	$("tr.video-item").not(this).removeClass("active");
     	$(this).toggleClass("active");
