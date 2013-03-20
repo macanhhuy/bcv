@@ -35,7 +35,8 @@ $(document).ready(function(){
     	}
 
     });
-    $(".insert-video").click(function({
+
+    $(".insert-video").click(function(){
     	if($(".insert-video").hasClass("disable")){
     		return;
     	}
@@ -43,7 +44,7 @@ $(document).ready(function(){
     		console.log($("tr.video-item.active").attr("id"));
     	}
 
-    }));
+    });
 
 	$("input.keyword").focusin(function () {
   			$(this).next("span").css('display','inline');
