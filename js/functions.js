@@ -14,6 +14,12 @@ $(document).ready(function(){
                gadgets.window.adjustHeight(dimensions.height-150); //the jive header + footer is around 150px
           });
     });
+    function showBC(data){
+      brightcoveItems = data;
+	 var template = $("#videoTemplate").html();
+       var html = Mustache.to_html(template, brightcoveItems);
+       osapi.jive.core.container.editor().insert(html);
+    }
 
     $("tr.video-item").click(function(){
     	$("tr.video-item").not(this).removeClass("active");
@@ -35,13 +41,15 @@ $(document).ready(function(){
     	}
 
     });
-
+    var data = array();
     $(".insert-video").click(function(){
     	if($(".insert-video").hasClass("disable")){
     		return;
     	}
     	else{
     		console.log($("tr.video-item.active").attr("id"));
+    		data['id'] = '12345';
+    		showBC(data);
     	}
 
     });
