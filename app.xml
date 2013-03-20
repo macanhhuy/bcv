@@ -99,7 +99,7 @@
 
   <Content type="html" view="home" href="home.html" preferred_height="600" preferred_width="800" />
  <Content type="html" view="canvas" href="canvas.html" preferred_height="640"/>
-  <Content type="html" view="insert" href="insert.html" preferred_height="680" preferred_width="610"/>
+  <Content type="html" view="insert" href="insert.html" preferred_height="660" preferred_width="610"/>
   <Content type="html" view="upload" href="upload.html" preferred_height="600" preferred_width="860"/>
   <Content type="html" view="success" href="success.html" preferred_height="600" preferred_width="700"/>
 </Module>
