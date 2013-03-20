@@ -121,7 +121,7 @@ $(document).ready(function(){
     //             });
     //         });
 		  osapi.jive.core.container.closeApp();
-
+	});
 	     gadgets.util.registerOnLoadHandler(function() {
 
 		        // Register a listener for embedded experience context
