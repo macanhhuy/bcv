@@ -69,7 +69,7 @@ $(document).ready(function(){
     });
 
  	/*====END VIDEOS====*/
-    $("tr.video-item").click(function(){
+    $("tr.video-item").live('click', function(){
     	$("tr.video-item").not(this).removeClass("active");
     	$(this).toggleClass("active");
 
@@ -91,7 +91,7 @@ $(document).ready(function(){
 
     });
 
-     $(".insert-video").click(function(){
+     $(".insert-video").live('click', function(){
     	if($(".insert-video").hasClass("disable")){
     		return;
     	}
@@ -124,7 +124,7 @@ $(document).ready(function(){
 
 	});
 
-	$(".insert-cancel").click(function(){
+	$(".insert-cancel").live('click', function(){
 		  // osapi.jive.core.container.closeApp( {
     //                 data: {
     //                     display: {
