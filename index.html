@@ -1,0 +1,256 @@
+﻿
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/odipot/1/edit
+-->
+<head>
+<meta charset=utf-8 />
+<title>BrightCove Video</title>
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+<script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript"  src="js/GothamBold_700.font.js"></script>
+<script type="text/javascript"  src="js/GothamBook_400.font.js"></script>
+<script type="text/javascript"  src="js/GothamLight_300.font.js"></script>
+<script type="text/javascript"  src="js/GothamMedium_500.font.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+</head>
+<body>
+
+
+  <div id="container" style="width:560px;height:560px;padding: 25px; margin:0 auto;">
+    <div id="search" style="width:560px;height:30px;">
+    	<h3>SELECT VIDEO</h3>
+    	<div class="searchform">
+    		<span class="search-icon"></span><input name="keyword" class="keyword" placeholder="Search"/><span class="search-delete"></span>
+   		 </div>
+    </div>
+    <div id="tabs" style="width:560px;height:50px;margin-top:30px">
+    	<ul class="nav nav-tabs">
+  <li class="active"><a href="#allvideotab" data-toggle="tab">All Videos</a><span></span></li>
+  <li><a href="#myvideotab" data-toggle="tab">My Videos</a><span></span></li>
+    <li><a href="#favoritetab" data-toggle="tab">Favorites</a><span></span></li>
+</ul>
+<div class="total-video">123 videos</div>
+    </div>
+    <div class="tab-content">
+    <div id="allvideotab" class="tab-pane active" style="width:560px;height: 372px;background: #424242">
+      <table>
+        <tr>
+          <th class="video-name active">NAME</th>
+          <th class="video-date">DATE</th>
+          <th class="video-owner">OWNER</th>
+          <th class="video-star"><span class="head-star"></span></th>
+        </tr>
+
+        <tr class="video-item">
+          <td>
+            <div class="col1" style="width: 327px;">
+              <div class="video-thumbnail" style="width:96px;height:63px;float:left;display:inline;backrgound: blue;position:relative;">
+                <img style="width: 96px; height:63px;" src="https://github.com/macanhhuy/files/raw/master/thumbnail.jpg" />
+                <span class="video-time" style="position:absolute;bottom:0;right:0;background:black;color: white; padding:2px 4px; opacity: .8;">5:04</span>
+              </div>
+              <div class="video-title" style="">
+
+              <h5>Airport Video</h5>
+              Vestibulum ac neque in massa porttitor lacinia. Vestibulum ac neque in massa porttitor lacinia ...
+
+            </div>
+            </div>
+          </td>
+          <td>
+            <div class="col2">
+            10/13/11
+            </div>
+          </td>
+          <td>
+            <div class="col3">
+              Mary
+            Masterson
+            </div>
+          </td>
+          <td>
+            <div class="col4">
+              <span class="star active">
+
+              </span>
+            </div>
+
+          </td>
+
+
+        </tr>
+
+        <tr class="video-item">
+          <td>
+            <div class="col1" style="width: 327px;">
+              <div class="video-thumbnail" style="width:96px;height:63px;float:left;display:inline;backrgound: blue;position:relative;">
+                <img style="width: 96px; height:63px;" src="https://github.com/macanhhuy/files/raw/master/thumbnail.jpg" />
+                <span class="video-time" style="position:absolute;bottom:0;right:0;background:black;color: white; padding:2px 4px; opacity: .8;">5:04</span>
+              </div>
+              <div class="video-title" style="">
+
+              <h5>Airport Video</h5>
+              Vestibulum ac neque in massa porttitor lacinia. Vestibulum ac neque in massa porttitor lacinia ...
+
+            </div>
+            </div>
+          </td>
+          <td>
+            <div class="col2">
+            10/13/11
+            </div>
+          </td>
+          <td>
+            <div class="col3">
+              Mary
+            Masterson
+            </div>
+          </td>
+          <td>
+            <div class="col4">
+              <span class="star">
+
+              </span>
+            </div>
+
+          </td>
+
+
+        </tr>
+          <tr class="video-item">
+          <td>
+            <div class="col1" style="width: 327px;">
+              <div class="video-thumbnail" style="width:96px;height:63px;float:left;display:inline;backrgound: blue;position:relative;">
+                <img style="width: 96px; height:63px;" src="https://github.com/macanhhuy/files/raw/master/thumbnail.jpg" />
+                <span class="video-time" style="position:absolute;bottom:0;right:0;background:black;color: white; padding:2px 4px; opacity: .8;">5:04</span>
+              </div>
+              <div class="video-title" style="">
+
+              <h5>Airport Video</h5>
+              Vestibulum ac neque in massa porttitor lacinia. Vestibulum ac neque in massa porttitor lacinia ...
+
+            </div>
+            </div>
+          </td>
+          <td>
+            <div class="col2">
+            10/13/11
+            </div>
+          </td>
+          <td>
+            <div class="col3">
+              Mary
+            Masterson
+            </div>
+          </td>
+          <td>
+            <div class="col4">
+              <span class="star">
+
+              </span>
+            </div>
+
+          </td>
+
+
+        </tr>
+  		<tr class="video-item">
+          <td>
+            <div class="col1" style="width: 327px;">
+              <div class="video-thumbnail" style="width:96px;height:63px;float:left;display:inline;backrgound: blue;position:relative;">
+                <img style="width: 96px; height:63px;" src="https://github.com/macanhhuy/files/raw/master/thumbnail.jpg" />
+                <span class="video-time" style="position:absolute;bottom:0;right:0;background:black;color: white; padding:2px 4px; opacity: .8;">5:04</span>
+              </div>
+              <div class="video-title" style="">
+
+              <h5>Airport Video</h5>
+              Vestibulum ac neque in massa porttitor lacinia. Vestibulum ac neque in massa porttitor lacinia ...
+
+            </div>
+            </div>
+          </td>
+          <td>
+            <div class="col2">
+            10/13/11
+            </div>
+          </td>
+          <td>
+            <div class="col3">
+              Mary
+            Masterson
+            </div>
+          </td>
+          <td>
+            <div class="col4">
+              <span class="star">
+
+              </span>
+            </div>
+
+          </td>
+
+
+        </tr>
+
+        <tr class="video-item active">
+          <td>
+            <div class="col1" style="width: 327px;">
+              <div class="video-thumbnail" style="width:96px;height:63px;float:left;display:inline;backrgound: blue;position:relative;">
+                <img style="width: 96px; height:63px;" src="https://github.com/macanhhuy/files/raw/master/thumbnail.jpg" />
+                <span class="video-time" style="position:absolute;bottom:0;right:0;background:black;color: white; padding:2px 4px; opacity: .8;">5:04</span>
+              </div>
+              <div class="video-title" style="">
+
+              <h5>Airport Video</h5>
+              Vestibulum ac neque in massa porttitor lacinia. Vestibulum ac neque in massa porttitor lacinia ...
+
+            </div>
+            </div>
+          </td>
+          <td>
+            <div class="col2">
+            10/13/11
+            </div>
+          </td>
+          <td>
+            <div class="col3">
+              Mary
+            Masterson
+            </div>
+          </td>
+          <td>
+            <div class="col4">
+              <span class="star">
+
+              </span>
+            </div>
+
+          </td>
+
+
+        </tr>
+      </table>
+         <div class="button-group">
+    	<span class="button insert-video disable"><span>Insert Video</span><span></span></span>
+    	<span class="button insert-cancel"><span>Cancel</span><span></span></span>
+   		 </div>
+    </div>
+
+ 	<div id="myvideotab" class="tab-pane"></div>
+ 	<div id="favoritetab" class="tab-pane"></div>
+ </div>
+  </div>
+
+<script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>

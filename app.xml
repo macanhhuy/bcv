@@ -40,10 +40,10 @@
     <Optional feature="actions">
         <Param name="action-contributions">
             <![CDATA[
-            <action id="com.thomsonreuters.demo.callout.location"
+            <action id="com.fgsquared.brightcove.insert"
                     path="jive/actions/rte"
                     label="Insert Video"
-                    view="embedded.callout_location"
+                    view="insert"
 	             />
             ]]>
         </Param>
@@ -100,5 +100,8 @@
   <Content type="html" view="home" href="home.html" preferred_height="600" preferred_width="800" />
   <Content type="html" view="canvas" href="canvas.html" preferred_height="600" preferred_width="800"/>
   <Content type="html" view="embedded.callout_location" href="callout.html" preferred_height="600" preferred_width="800" />
-
+ <Content type="html" view="canvas" href="index.html" preferred_height="640"/>
+  <Content type="html" view="insert" href="insert.html" preferred_height="560" preferred_width="560"/>
+  <Content type="html" view="upload" href="upload.html" preferred_height="600" preferred_width="860"/>
+  <Content type="html" view="show" href="viewer.html" preferred_height="600" preferred_width="700"/>
 </Module>

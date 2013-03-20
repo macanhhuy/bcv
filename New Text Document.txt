@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/odipot/1/edit
+-->
+<head>
+<meta charset=utf-8 />
+<title>BrightCove Video</title>
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+  
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>  
+<script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+
+
+<style id="jsbin-css">
+img{
+  max-width: 120px;
+}
+.pl:hover{
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+  <style>
+   @font-face {
+				font-family: 'GothamBold';
+				src: url('https://github.com/macanhhuy/files/raw/master/gotham_bold.eot');
+				src: url('https://github.com/macanhhuy/files/raw/master/gothambold.eot?#iefix') format('embedded-opentype'),
+						 url('https://github.com/macanhhuy/files/raw/master/gothambold.woff') format('woff'),
+						 url('https://github.com/macanhhuy/files/raw/master/gotham_bold.ttf') format('truetype'),
+						 url('https://github.com/macanhhuy/files/raw/master/gothambold.svg#gothambold') format('svg');
+				font-weight: normal;
+				font-style: normal;
+		}
+
+   @font-face {
+				font-family: 'GothamBook';
+				src: url('https://github.com/macanhhuy/files/raw/master/gothambook.eot');
+				src: url('https://github.com/macanhhuy/files/raw/master/gothambook.eot?#iefix') format('embedded-opentype'),
+						 url('https://github.com/macanhhuy/files/raw/master/gothambook.woff') format('woff'),
+						 url('https://github.com/macanhhuy/files/raw/master/gothambook.ttf') format('truetype'),
+						 url('https://github.com/macanhhuy/files/raw/master/gothambook.svg#gothambook') format('svg');
+				font-weight: normal;
+				font-style: normal;
+		}
+    
+    @font-face {
+				font-family: 'GothamLight';
+				src: url('https://github.com/macanhhuy/files/raw/master/gothamlight.eot');
+				src: url('https://github.com/macanhhuy/files/raw/master/gothamlight.eot?#iefix') format('embedded-opentype'),
+						 url('https://github.com/macanhhuy/files/raw/master/gothamlight.woff') format('woff'),
+						 url('https://github.com/macanhhuy/files/raw/master/gothamlight.ttf') format('truetype'),
+						 url('https://github.com/macanhhuy/files/raw/master/gothamlight.svg#gothamlight') format('svg');
+				font-weight: normal;
+				font-style: normal;
+		}
+     html,body{
+      font-family: 'GothamBold';
+    }
+    th{
+      height: 27px;
+      background: #595959
+    }
+    .video-name{
+      width: 327px;
+    }
+    .video-date{
+      width: 88px;
+    }
+    .video-owner{
+      width: 100px;
+    }
+    .video-star{
+      width: 30px;
+    }
+    tr.video-item{
+      height: 64px;
+      color: #999;
+      font-size: 12px;
+      font-family: 'GothamBook';
+    }
+    
+    tbody tr > td > div{
+      height: 64px;
+    }
+    .video-title{
+      color: #999;
+      font-size: 12px;
+      width:208px;
+      float:left;
+      display:inline;
+      padding-left:10px;
+      line-height: 110%;
+      
+    }
+    .video-title > h5{
+      margin: 0;
+      color: white;
+      font-size: 14px;
+      font-weight: normal;
+      font-family: 'GothamBold';
+    }
+    div.col2, div.col3{
+      line-height: 64px;
+      font-weight:bold;
+    }
+    div.col2{
+      text-align:center;
+    }
+  </style>
+  <div id="container" style="width:560px;height:560px;padding: 25px; background:#3b3b3b;margin:0 auto;">
+    <div id="search" style="width:560px;height:30px;background:#555"></div>
+    <div id="tabs" style="width:560px;height:50px;background:#555;margin-top:30px"></div>
+    <div id="videos" style="width:560px;height: 372px;background: #424242">
+      <table>
+        <tr>
+          <th class="video-name">NAME</th>
+          <th class="video-date">DATE</th>
+          <th class="video-owner">OWNER</th>
+          <th class="video-star">STAR</th>
+        </tr>
+       
+        <tr class="video-item">
+          <td>
+            <div class="col1" style="width: 327px;">
+              <div class="video-thumbnail" style="width:96px;height:63px;float:left;display:inline;backrgound: blue;position:relative;">  
+                <img style="width: 96px; height:63px;" src="https://github.com/macanhhuy/files/raw/master/thumbnail.jpg" />  
+                <span class="video-time" style="position:absolute;bottom:0;right:0;background:black;color: white; padding:2px 4px; opacity: .8;">5:04</span>
+              </div>
+              <div class="video-title" style="
+">
+              
+              <h5>Airport Video</h5>
+              Vestibulum ac neque in massa porttitor lacinia. Vestibulum ac neque in massa porttitor lacinia ...
+              
+            </div>
+            </div>
+          </td>
+          <td>
+            <div class="col2">
+            10/13/11
+            </div>
+          </td>
+          <td>
+            <div class="col3">
+              Mary
+            Masterson
+            </div>
+          </td>
+          <td>
+            <div class="col4">
+              <span class="star"></span>
+            </div>
+            
+          </td>        
+          
+          
+        </tr>
+      
+      </table>
+    </div>
+  </div>
+
+<script>
+(function() {
+          
+		window.app = {};
+		app.collections = {};
+		app.models = {};
+		app.views = {};
+		app.routers = {};
+        app.configs = {};
+
+		})();
+app.read_token = 'zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..';
+app.configs = {
+
+  api: 'http://api.brightcove.com/services/library?page_size=20&callback=?&token='+ app.read_token+'&command='
+
+};
+
+		(function ( models ) {
+		models.Video = Backbone.Model.extend({
+		defaults: {
+			username: 'macanhhuy',
+			password: '123456'
+		},
+         url: app.configs.api
+		});
+        models.Playlist = Backbone.Model.extend({
+		
+		});  
+          
+		})(app.models);
+
+		(function (collections, models) {
+          
+		collections.VideoCollection= Backbone.Collection.extend({
+		model: models.Video,
+		url: 'http://api.brightcove.com/services/library?command=find_all_videos&page_size=20&callback=?&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..',
+		parse: function (response) {
+			return response.items;
+		}
+		});
+          
+        collections.PlaylistCollection= Backbone.Collection.extend({
+		model: models.Playlist,
+		url: app.configs.api+'find_all_playlists',
+		parse: function (response) {
+			return response.items;
+		}
+		});
+          
+          
+		})( app.collections, app.models);
+
+
+		(function(views) {
+		views.VideoView = Backbone.View.extend({
+		tagName : 'tr',
+		className: 'video',
+		events: {'click button.delete': 'deleteVideo'
+		},
+		template : _.template($('#video-template').html()),
+		initialize : function() {
+
+			this.model.bind('change', this.render, this);
+			this.model.bind('destroy', this.remove, this);
+		},
+		render : function() {
+		this.$el.html(this.template(this.model.toJSON()));
+			return this;
+		},
+		deleteVideo: function(){
+		this.model.destroy();
+         
+        console.log('delete');
+		}
+		});
+
+		views.AppView = Backbone.View.extend({
+		el : 'body',
+			events:{
+				'click span.search':'searchVideo',
+				'click span.reset':'resetVideo'
+			},
+		
+		initialize : function() {
+			_.bindAll(this,'render','addOne', 'addAll');
+
+
+			this.collection.on('reset', this.addAll, this);
+			this.collection.on('change', this.addAll, this);
+			this.collection.fetch();
+      
+
+		},
+		resetVideo: function(){
+        this.collection.fetch();
+			},
+			searchVideo: function(){
+
+		var url = 'http://api.brightcove.com/services/library?command=search_videos&none=private&none=private&page_size=20&callback=?&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..';
+			var keyword = $('#search').val(), any='';
+			keywords = keyword.split(',');
+			keywords.forEach(function(key){
+			any += '&any='+key;
+            });
+
+		this.collection.url = url+any;
+		this.collection.fetch();
+		},
+		addAll : function() {
+		$('#videos').html('<th>Thumbnail</th><th>Video Name</th><th>Action</th>');
+		this.collection.url = app.configs.api+'find_all_videos';
+		var sortedByAlphabet = this.collection.sortBy(function (todo) {
+		return todo.get("name").toLowerCase();
+		});
+       var playlistview = new app.views.PlaylistView({collection:new           app.collections.PlaylistCollection()});
+			sortedByAlphabet.forEach(this.addOne);
+		},
+		addOne : function(item) {
+			var video = new                 views.VideoView({model:item});
+			$('#videos').append(video.render().el);
+         
+		},
+		render : function() {
+
+			return this;
+		}
+		});
+        
+          
+        views.PLView = Backbone.View.extend({
+        
+		tagName : 'li',
+		className: 'pl',
+          events: {
+            'click span.playlist':'add2Playlist'
+		},
+		template : _.template('<span class="playlist"><%= name %></span>'),
+		initialize : function() {
+
+			this.model.bind('change', this.render, this);
+		
+		},
+		render : function() {
+		this.$el.html(this.template(this.model.toJSON()));
+			return this;
+		},
+	
+          add2Playlist: function(e){
+              e.preventDefault();
+         var videoIds = this.model.attributes.videoIds || [];
+  
+        var id = $(e.currentTarget).parent().parent().parent();
+            videoid = id.data('id');
+ 
+           videoIds.push(videoid);
+            console.log(_.uniq(videoIds, false));
+          }
+		});  
+          
+          
+          
+        views.PlaylistView = Backbone.View.extend({
+        el: 'body',
+		initialize : function() {
+       
+		this.collection.bind('reset', this.render, this);
+		this.collection.fetch();
+		},
+        render : function() {
+          
+          this.collection.each(this.addItem);
+        
+			return this;
+		},
+        addItem: function(item){
+        var plview = new app.views.PLView({model:item});
+          
+           $('.dropdown-menu').append(plview.render().el);     
+        }
+		});  
+          
+      views.PlaylistTabView = Backbone.View.extend({
+		tagName : 'tr',
+		className: 'playlist',
+		template : _.template($('#playlist-template').html()),
+		initialize : function() {
+
+			this.model.bind('change', this.render, this);
+			this.model.bind('destroy', this.remove, this);
+		},
+		render : function() {
+		this.$el.html(this.template(this.model.toJSON()));
+			return this;
+		}
+		});
+          
+		views.PlaylistsView = Backbone.View.extend({
+		el : '#playlists',
+		initialize : function() {
+			_.bindAll(this,'render','addOne', 'addAll');
+
+
+			this.collection.on('reset', this.addAll, this);
+			this.collection.on('change', this.addAll, this);
+			this.collection.fetch();
+      
+		},
+		addAll : function() {
+		$(this.el).html('<th>ID</th><th>Playlist Name</th><th>Description</th>');
+		
+		var sortedByAlphabet = this.collection.sortBy(function (todo) {
+		return todo.get("name").toLowerCase();
+		});
+
+			sortedByAlphabet.forEach(this.addOne);
+		},
+		addOne : function(item) {
+			var playlist = new                 views.PlaylistTabView({model:item});
+			$(this.el).append(playlist.render().el);
+         
+		},
+		render : function() {
+
+			return this;
+		}
+		});          
+          
+        })(app.views);
+
+  
+
+		var appview = new app.views.AppView({collection:new app.collections.VideoCollection()});
+        var playlistview = new app.views.PlaylistsView({collection:new app.collections.PlaylistCollection()});
+
+		
+
+		(function ( models ) {
+		models.Playlist = Backbone.Model.extend({
+		defaults: {
+			name: 'playlist name'
+		}
+		});
+		})(app.models);
+
+		(function ( routers ) {
+		routers.VideoRouter = Backbone.Router.extend({
+		routes: {
+			"about" : "showAbout"
+		},
+		showAbout: function(){
+          console.log('Mac Anh Huy');
+        }
+
+		});
+
+		})(app.routers);
+
+
+		var myRouter = new app.routers.VideoRouter();
+
+		Backbone.history.start();
+</script>
+<script src="http://static.jsbin.com/js/render/edit.js"></script>
+<script>jsbinShowEdit({"root":"http://static.jsbin.com","csrf":"bA9IGN5qfx34JOKCHMcOTs8U"});</script>
+<script src="http://static.jsbin.com/js/vendor/eventsource.js"></script>
+<script src="http://static.jsbin.com/js/spike.js"></script>
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1656750-13']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script>
+
+</body>
+</html>

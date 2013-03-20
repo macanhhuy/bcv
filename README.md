@@ -1,6 +1,5 @@
-# Jive Location Demo
-
-## Using the App
+brightcoveapps
+==============g the App
 To load this app in your Jive environment, follow these steps:
 
 1. Clone this app.
