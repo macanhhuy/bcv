@@ -59,7 +59,7 @@ $(document).ready(function(){
     });
  	/*====MY VIDEOS====*/
 
- 	 url2 = "http://api.brightcove.com/services/library?command=search_videos&any=video&none=private&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
+ 	 url2 = "http://api.brightcove.com/services/library?command=find_all_videos&token=zgooH18dKNI0NR4PiDk6_iabWI372AA96LUU_aKVKH06ZLz1bMZtow..";
  	osapi.http.get({
       href: url2,
         format: 'json'
