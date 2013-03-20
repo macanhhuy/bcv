@@ -41,14 +41,12 @@ $(document).ready(function(){
     	}
 
     });
-    var data = array();
-    $(".insert-video").click(function(){
+     $(".insert-video").click(function(){
     	if($(".insert-video").hasClass("disable")){
     		return;
     	}
     	else{
     		console.log($("tr.video-item.active").attr("id"));
-    		data['id'] = $("tr.video-item.active").attr("id");
     		osapi.jive.core.container.editor().insert($("#videoTemplate").html());
     	}
 
