@@ -4,6 +4,17 @@ Cufon.replace('.total-video, h1, h2, p', { fontFamily: 'GothamLight' });
 Cufon.replace('.status p', { fontFamily: 'GothamMedium' });
 
 $(document).ready(function(){
+
+	  gadgets.window.adjustHeight(600); //or whatever default height you please
+    //this will trigger the event handler below. Note that window in this case refers to the app iframe.
+    //If you have width: auto or 100% it will also trigger whenever a user changes their browser window (width) size.
+    $(window).resize(function(){
+          jive.canvas.getCanvasDimensions(function(dimensions) {
+               gadgets.window.adjustHeight(dimensions.height -150); //the jive header + footer is around 150px
+          });
+    });
+
+
 	$("input.keyword").focusin(function () {
   			$(this).next("span").css('display','inline');
 	});
@@ -12,12 +23,12 @@ $(document).ready(function(){
 		//$(this).hide();
 	});
 	$("input.keyword").focusout(function(e) {
-		
+
 		if($("input.keyword").val()==""){
 				$(this).next("span").hide();
 		}
-		
+
 	});
 
-	
+
 });
