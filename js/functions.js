@@ -11,7 +11,7 @@ $(document).ready(function(){
     $(window).resize(function(){
           jive.canvas.getCanvasDimensions(function(dimensions) {
           	console.log(dimensions);
-               gadgets.window.adjustHeight(dimensions.height -150); //the jive header + footer is around 150px
+               gadgets.window.adjustHeight(dimensions.height); //the jive header + footer is around 150px
           });
     });
 
