@@ -111,7 +111,7 @@ $(document).ready(function(){
                             label: 'Play Video'
                         },
                         target: {
-                            type: "html",
+                            type: "embed",
                             view: "player",
                             context: {
                                 id: 2180516443001
